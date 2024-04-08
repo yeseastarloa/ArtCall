@@ -1,0 +1,20 @@
+{
+    "name": "artcall",
+    "version": "1.0.0",
+    "description": "Esta app permite de forma simple agregar convocatorias y organizarlas en un tabla o calendario, el orden prioriza el Deadline de cada convocatoria.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "mysql2": "^3.9.3"
+    },
+    "devDependencies": {
+        "eslint": "^9.0.0",
+        "prettier": "^3.2.5"
+    }
+}

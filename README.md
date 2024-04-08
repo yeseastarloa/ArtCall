@@ -13,54 +13,54 @@ Esta app permite de forma simple agregar convocatorias y organizarlas en un tabl
 
 ### User
 
-| Campo      | Tipo         | Descripción                              |
-| ---------- | -------      | -------------------------------          |
-| id         | INT          | Identificador unico del usuario          | 
-| email      | VARCHAR      | Dirección de correo electrónico          | 
-| username   | VARCHAR      | Nombre de usuario                        | 
-| password   | VARCHAR      | Contraseña del usuario                   | 
-| avatar     | VARCHAR      | Nombre del Avtar del usuario             | 
-| bio        | VARCHAR      | Descripción del usuario                  | 
-| role       | VARCHAR      | Rol del Usuario                          | 
-| createdAt  | DATETIME     | Fecha y hora de creación del usuario     | 
-| modifiedAt | DATETIME     | Fecha y hora de modificación del usuario | 
-| registrationCode | VARCHAR | Codigo de registro                       |
-| isActive         | TINYINT  | Estado de la validación.
+| Campo            | Tipo     | Descripción                              |
+| ---------------- | -------- | ---------------------------------------- |
+| id               | INT      | Identificador unico del usuario          |
+| email            | VARCHAR  | Dirección de correo electrónico          |
+| username         | VARCHAR  | Nombre de usuario                        |
+| password         | VARCHAR  | Contraseña del usuario                   |
+| name             | VARCHAR  | Nombre                                   |
+| lastname         | VARCHAR  | Apellido                                 |
+| avatar           | VARCHAR  | Nombre del Avtar del usuario             |
+| bio              | VARCHAR  | Descripción del usuario                  |
+| createdAt        | DATETIME | Fecha y hora de creación del usuario     |
+| modifiedAt       | DATETIME | Fecha y hora de modificación del usuario |
+| registrationCode | VARCHAR  | Codigo de registro                       |
+| role             | VARCHAR  | Rol del Usuario                          |
+| isActive         | BOOLEAN  | Estado de la validación.                 |
 
-### Open Call
+### Open Calls
 
-
-| Campo         | Tipo     | 
-| ------------- | -------- |
-| id            | INT      | Identificador único
-| userId        | INT      | Identificador del usuario propietario de la opencall.
-| name          | VARCHAR  | Nombre de la opencall.
-| state         | ENUM     | Estado de la opencall.
-| deadline      | DATE     | Fecha límite de la opencall.
-| link          | VARCHAR  | Enlace relacionado con la opencall.
-| image         | VARCHAR  | URL de la imagen relacionada con la opencall.
-| place         | VARCHAR  | Lugar de la opencall.
-| request       | VARCHAR  | Requisitos de la opencall.
-| offer         | VARCHAR  | Ofertas de la opencall.
-| comments      | VARCHAR  | Comentarios adicionales sobre la opencall.
-| selected      | ENUM     | Indica si la opencall está seleccionada o no.
-| createdAt     | DATETIME | Fecha y hora de creación de la opencall.
-| isActive         | TINYINT  | Estado de la openCall.(según deadline)
-| addNewColumn  | BOOLEAN  |
+| Campo        | Tipo     |
+| ------------ | -------- | ----------------------------------------------------- |
+| id           | INT      | Identificador único                                   |
+| userId       | INT      | Identificador del usuario propietario de la opencall. |
+| title        | VARCHAR  | Nombre de la opencall.                                |
+| state        | ENUM     | Estado de la opencall.                                |
+| deadline     | DATE     | Fecha límite de la opencall.                          |
+| link         | VARCHAR  | Enlace relacionado con la opencall.                   |
+| image        | VARCHAR  | URL de la imagen relacionada con la opencall.         |
+| place        | VARCHAR  | Lugar de la opencall.                                 |
+| requeriments | VARCHAR  | Requisitos de la opencall.                            |
+| offers       | VARCHAR  | Ofertas de la opencall.                               |
+| comments     | VARCHAR  | Comentarios adicionales sobre la opencall.            |
+| selected     | ENUM     | Indica si la opencall está seleccionada o no.         |
+| createdAt    | DATETIME | Fecha y hora de creación de la opencall.              |
+| isActive     | TINYINT  | Estado de la openCall.(según deadline)                |
+| addNewColumn | BOOLEAN  |
 
 ## Enpoints
 
 ## Usuarios:
 
-- POST / `users` -  Registro de usuario.
-- POST / `users/login` - Login de usuario (devuelve token).
-- POST `/users/validate/:regCode` - Permite validar un usuario. (VER SI SE HACE)
-- GET / `users` - Devuelve información del usuario del token.
-- PUT / `users` - Editar el email o el nombre del usuario.
-- PUT / `users/avatar` Editar el avatar.
-- DELETE `/users/delete` - Eliminar cuenta del usuario. (VER SI SE HACE)
--  GET `/users/products/:id` - Ver los productos de un usuario.(VER SI SE HACE)
-
+-   POST / `users` - Registro de usuario.
+-   POST / `users/login` - Login de usuario (devuelve token).
+-   POST `/users/validate/:regCode` - Permite validar un usuario. (VER SI SE HACE)
+-   GET / `users` - Devuelve información del usuario del token.
+-   PUT / `users` - Editar el email o el nombre del usuario.
+-   PUT / `users/avatar` Editar el avatar.
+-   DELETE `/users/delete` - Eliminar cuenta del usuario. (VER SI SE HACE)
+-   GET `/users/products/:id` - Ver los productos de un usuario.(VER SI SE HACE)
 
 ### Open calls:
 
