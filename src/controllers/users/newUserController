@@ -1,0 +1,31 @@
+//im portamos los modelos
+const insertUserModel = require('../../models/users/insertUserModel');
+
+//Función controladora final (las funciones controladoras finales tiene al final un .res) pque INSERTA un nuevo el usuario. Es controladora final porque hace uso del res.send para enviar una respuesta al cliente
+
+const newUserController = async (req, res, next) => {
+    try {
+        // datos que pedimos al usuario. Importamos los datos del body
+        const { username, email, password } = req.body;
+
+        //queremos que lance un error si falta un campo
+        if (!username || !email || !password) {
+            const err = new Error('Faltan Campos');
+            err.httpStatus = 400;
+            throw err;
+        }
+        // Cualquier error que ocurra aqui lo captura este catch por eso no necesitamos un catch en el modelo
+        // creamos el usuario
+        await insertUserModel(username, email, password);
+        //(las funciones controladoras finales tiene al final un .res)
+        res.send({
+            status: 'ok',
+            message:
+                'Usuario creado con éxito. Welcome to your OpenCallCalendar!',
+        });
+    } catch (err) {
+        next(err);
+    }
+};
+
+module.exports = newUserController;

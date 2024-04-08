@@ -31,7 +31,7 @@ const getDb = async () => {
             //ahora estamos creando la base de datos si no existe. El metodo query es asincrono entonces hay que poner un await asi primero esperamos a que se concrete
 
             await connection.query(
-                `CREATE DATABASE IF NOT EXISTS ${MYSQL_HOST}`
+                `CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE}`
             );
 
             // Creamos el grupo de conexiones. le pasamos un objeto con caracteristicas similares al anteriro pero agregando mas información como el numero de conexiones que vamos a tener en el array
@@ -40,7 +40,7 @@ const getDb = async () => {
                 host: MYSQL_HOST,
                 user: MYSQL_USER,
                 password: MYSQL_PASSWORD,
-                database: MYSQL_HOST,
+                database: MYSQL_DATABASE,
                 timezone: 'local',
             });
         }
